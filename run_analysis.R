@@ -80,13 +80,21 @@ tidy_set$TestSubject <- as.factor(tidy_set$TestSubject)
 tidy_set$Activity <- as.factor(tidy_set$Activity)
 rownames(tidy_set) <- NULL
 
-# DATA VERIFICATION - "manually" generate a test variable to verify that the calculated average values are correct.
+# DATA VERIFICATION - "manually" generate a couple test variables to verify that the calculated average values are correct.
 # pull all of the data for subject = 1, activity = walking, variable = tBodyAcc.mean...X
 test_set <- select(filter(sub_data, V1=="Walking" & subjects==1), MeanAccelerationXAxis)
 # calculate the mean, and compare it to the same calculation from the result set.
-result = all.equal(mean(test_set$MeanAccelerationXAxis), tidy_set$MeanAccelerationXAxis[1])
+tidy_set_val <- select(filter(tidy_set, TestSubject==1 & Activity=="Walking"), MeanAccelerationXAxis)$MeanAccelerationXAxis
+result <- all.equal(mean(test_set$MeanAccelerationXAxis), tidy_set_val)
 print("Data calculation verification--TRUE indicates the verification passed:")
 print(result)
+
+# second verification, with data from the middle of the matrix
+test_set <- select(filter(sub_data, V1=="Sitting" & subjects==5), StandardDeviationFFTAccelerationXAxis)
+tidy_set_val <- select(filter(tidy_set, TestSubject==5 & Activity=="Sitting"), StandardDeviationFFTAccelerationXAxis)$StandardDeviationFFTAccelerationXAxis
+result <- all.equal(mean(test_set$StandardDeviationFFTAccelerationXAxis), tidy_set_val)
+print(result)
+
 
 # write the tidy data set to a file for project submission
 write.table(tidy_set, "tidy_data_set.txt", row.names=FALSE)
