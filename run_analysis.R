@@ -88,6 +88,9 @@ result = all.equal(mean(test_set$MeanAccelerationXAxis), tidy_set$MeanAccelerati
 print("Data calculation verification--TRUE indicates the verification passed:")
 print(result)
 
+# write the tidy data set to a file for project submission
+write.table(tidy_set, "tidy_data_set.txt", row.names=FALSE)
+
 # Environment clean up - tidy up the global environment by removing temporary variables to save memory
 rm(combined_data)
 rm(combined_subjects)
