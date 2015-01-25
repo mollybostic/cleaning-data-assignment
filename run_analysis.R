@@ -46,9 +46,9 @@ sub_data$V1 <- mapvalues(sub_data$V1, from = c("1", "2", "3", "4", "5", "6"),
 # 4) appropriately label the data set with descriptive variable names
 # (See codebook.md for an explanation of the variable names.)
 names(sub_data) <- str_replace_all(names(sub_data), "[.][.]", "")
-names(sub_data) <- str_replace_all(names(sub_data), "tBody", "")
-names(sub_data) <- str_replace_all(names(sub_data), "fBody", "FFT")
-names(sub_data) <- str_replace_all(names(sub_data), "Body", "")
+names(sub_data) <- str_replace_all(names(sub_data), "BodyBody", "Body")
+names(sub_data) <- str_replace_all(names(sub_data), "tBody", "Body")
+names(sub_data) <- str_replace_all(names(sub_data), "fBody", "FFTBody")
 names(sub_data) <- str_replace_all(names(sub_data), "tGravity", "Gravity")
 names(sub_data) <- str_replace_all(names(sub_data), "fGravity", "FFTGravity")
 names(sub_data) <- str_replace_all(names(sub_data), "Acc", "Acceleration")
@@ -82,17 +82,17 @@ rownames(tidy_set) <- NULL
 
 # DATA VERIFICATION - "manually" generate a couple test variables to verify that the calculated average values are correct.
 # pull all of the data for subject = 1, activity = walking, variable = tBodyAcc.mean...X
-test_set <- select(filter(sub_data, V1=="Walking" & subjects==1), MeanAccelerationXAxis)
+test_set <- select(filter(sub_data, V1=="Walking" & subjects==1), MeanBodyAccelerationXAxis)
 # calculate the mean, and compare it to the same calculation from the result set.
-tidy_set_val <- select(filter(tidy_set, TestSubject==1 & Activity=="Walking"), MeanAccelerationXAxis)$MeanAccelerationXAxis
-result <- all.equal(mean(test_set$MeanAccelerationXAxis), tidy_set_val)
+tidy_set_val <- select(filter(tidy_set, TestSubject==1 & Activity=="Walking"), MeanBodyAccelerationXAxis)$MeanBodyAccelerationXAxis
+result <- all.equal(mean(test_set$MeanBodyAccelerationXAxis), tidy_set_val)
 print("Data calculation verification--TRUE indicates the verification passed:")
 print(result)
 
 # second verification, with data from the middle of the matrix
-test_set <- select(filter(sub_data, V1=="Sitting" & subjects==5), StandardDeviationFFTAccelerationXAxis)
-tidy_set_val <- select(filter(tidy_set, TestSubject==5 & Activity=="Sitting"), StandardDeviationFFTAccelerationXAxis)$StandardDeviationFFTAccelerationXAxis
-result <- all.equal(mean(test_set$StandardDeviationFFTAccelerationXAxis), tidy_set_val)
+test_set <- select(filter(sub_data, V1=="Sitting" & subjects==5), StandardDeviationFFTBodyAccelerationXAxis)
+tidy_set_val <- select(filter(tidy_set, TestSubject==5 & Activity=="Sitting"), StandardDeviationFFTBodyAccelerationXAxis)$StandardDeviationFFTBodyAccelerationXAxis
+result <- all.equal(mean(test_set$StandardDeviationFFTBodyAccelerationXAxis), tidy_set_val)
 print(result)
 
 
