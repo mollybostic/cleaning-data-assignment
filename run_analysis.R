@@ -95,7 +95,6 @@ tidy_set_val <- select(filter(tidy_set, TestSubject==5 & Activity=="Sitting"), S
 result <- all.equal(mean(test_set$StandardDeviationFFTBodyAccelerationXAxis), tidy_set_val)
 print(result)
 
-
 # write the tidy data set to a file for project submission
 write.table(tidy_set, "tidy_data_set.txt", row.names=FALSE)
 

@@ -3,6 +3,8 @@
 The tidy data in [tidy_data_set.txt](./tidy_data_set.txt) can be read into R with the following code:
 	read.table("tidy_data_set.txt", header=TRUE, colClasses=c('factor', 'factor', rep('numeric', 66)))
 
+## Description of the tidy data set
+
 The [tidy_data_set.txt](./tidy_data_set.txt) file in this directory is a tidy subset of the data provided in the Human Activity Recognition Using Smartphones Data Set. The source data is available from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones# and it's also included in the UCI HAR Dataset directory in this repo. 
 
 tidy_data_set.txt includes the combined test and training data sets from the following files:
@@ -19,6 +21,16 @@ In the tidy data set, the values in the subject_test and subject_train files are
 The tidy data set is a subset of this combined data that includes only measurements on the mean and standard deviation for each measure. This reduces the data to 638 columns (68 feature variable measurements, plus the TestSubject and Activity columns)
 
 The size of the tidy data set was further reduced by averaging each variable for each activity and each subject. This resulted in 180 rows of data, with a unique combination of TestSubject and Activity values in each row. 
+
+There are some interesting threads on the course discussion board about wide vs. narrow formats for tidy data. I chose to use the wide format, aligning to these principles:
+
+1. Each column represents a variable or measure or characteristic.
+2. Each variable is in one column.
+3. Each observation of the variable is in a different row.
+
+Hence the final tidy data set is 180 rows x 68 columns.
+
+## Description of variables
 
 I updated the feature variable names in the tidy data to make it easier for readers and consumers of the data to understand the measurement of each column. The names use the following convention:
 
@@ -43,10 +55,6 @@ Here are some example mappings of old to new column names:
 
 The overall result is that the names are long but hopefully easier to understand.
 
-There are some interesting threads on the course discussion board about wide vs. narrow formats for tidy data. I chose to use the wide format, aligning to these principles:
+## Description of run_analysis.R script
 
-1. Each column represents a variable or measure or characteristic.
-2. Each variable is in one column.
-3. Each observation of the variable is in a different row.
-
-Hence the final tidy data set is 180 rows x 68 columns.
+[readme.md](./readme.md) contains a walkthrough of the [run_analysis.R](./run_analysis.R) script and notes about how to run the script.
