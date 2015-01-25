@@ -1,6 +1,7 @@
 # Readme.md 
 
 The tidy data in [tidy_data_set.txt](./tidy_data_set.txt) can be read into R with the following code:
+	
 	read.table("tidy_data_set.txt", header=TRUE, colClasses=c('factor', 'factor', rep('numeric', 66)))
 
 ## Description of run_analysis.R
