@@ -3,7 +3,7 @@
 The tidy data in [tidy_data_set.txt](./tidy_data_set.txt) can be read into R with the following code:
 read.table("tidy_data_set.txt", header=TRUE, colClasses=c('factor', 'factor', rep('numeric', 66)))
 
-## Description of run_analysis.R script
+## Description of run_analysis.R
 
 [run_analysis.R](./run_analysis.R) takes source data from the **UCI Har Dataset** directory, imports it into R, and transforms it into a tidy data subset. 
 
@@ -38,6 +38,27 @@ I love the way that R commands can simplify calculations over data frames and li
 
 
 ## Description of tidy data
+
+[codebook.md](./codebook.md) describes the specific details of variables, values, and units in the tidy data set. 
+
+The [tidy_data_set.txt](./tidy_data_set.txt) file in this directory is a tidy subset of the data provided in the Human Activity Recognition Using Smartphones Data Set. The source data is available from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones# and it's also included in the UCI HAR Dataset directory in this repo. 
+
+tidy_data_set.txt includes the combined test and training data sets from the following files:
+
+- [UCI HAR Dataset/test/subject_test.txt](./UCI HAR Dataset/test/subject_test.txt)
+- [UCI HAR Dataset/test/X_test.txt](./UCI HAR Dataset/test/X_test.txt)
+- [UCI HAR Dataset/test/y_test.txt](./UCI HAR Dataset/test/y_test.txt)
+- [UCI HAR Dataset/train/subject_train.txt](./UCI HAR Dataset/train/subject_train.txt)
+- [UCI HAR Dataset/train/X_train.txt](./UCI HAR Dataset/train/X_train.txt)
+- [UCI HAR Dataset/train/y_train.txt](./UCI HAR Dataset/train/y_train.txt)
+
+There are some interesting threads on the course discussion board about wide vs. narrow formats for tidy data. I chose to use the wide format, aligning to these principles:
+
+1. Each column represents a variable or measure or characteristic.
+2. Each variable is in one column.
+3. Each observation of the variable is in a different row.
+
+Hence the final tidy data set is 180 rows x 68 columns.
 
 [codebook.md](./codebook.md) describes the tidy data set. 
 
