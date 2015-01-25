@@ -1,6 +1,7 @@
 # Code book
 
 The tidy data in [tidy_data_set.txt](./tidy_data_set.txt) can be read into R with the following code:
+
 	read.table("tidy_data_set.txt", header=TRUE, colClasses=c('factor', 'factor', rep('numeric', 66)))
 
 ## Overview
@@ -13,7 +14,7 @@ The tidy data set is a subset of this combined data that includes only measureme
 
 ## Data dictionary
 
-The variables in this tidy data set are a subset of the variables described in the [features_info.txt](../UCI HAR Dataset/features_info.txt) file in the original data set. [features_info.txt](../UCI HAR Dataset/features_info.txt) provides a more in-depth overview of the original values and how they were calculated.
+The variables in this tidy data set are a subset of the variables described in the [features_info.txt](./UCI HAR Dataset/features_info.txt) file in the original data set. [features_info.txt](./UCI HAR Dataset/features_info.txt) provides a more in-depth overview of the original values and how they were calculated.
 
 1. **TestSubject** - A factor that identifies the volunteer participant.
 	>Values: integer from 1 to 30
