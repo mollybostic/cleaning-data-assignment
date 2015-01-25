@@ -22,7 +22,7 @@ The variables in this tidy data set are a subset of the variables described in t
 2. **Activity** - A factor that identifies the activity being performed
 	> Values: Walking, WalkingUpStairs, WalkingDownStairs, Sitting, Standing, Lying
 
-	***The following feature variables are each an average of the values collected for the test subject and activity specified in the data row. For each, the value is a numeric normalized and bounded within [-1, 1]***
+	***The feature variables below (#3 - #68) are each an average of the values collected for the test subject and activity specified in the data row. For each, the value is a numeric normalized and bounded within [-1, 1]***
 
 3. **MeanBodyAccelerationXAxis** - The mean of the body acceleration on the X axis. 
 
@@ -158,7 +158,7 @@ The variables in this tidy data set are a subset of the variables described in t
 
 ## Note - Variable naming
 
-I updated the feature variable names in the tidy data (vs. the names in the source data described in [features_info.txt](../UCI HAR Dataset/features_info.txt)) to make it easier for consumers of the data to understand the measurement of each column. The names use the following conventions:
+I updated the feature variable names in the tidy data (vs. the names in the source data described in [features_info.txt](./UCI HAR Dataset/features_info.txt)) to make it easier for consumers of the data to understand the measurement of each column. The names use the following conventions:
 
 - The first word(s) indicates the type of metric, **Mean** or **StandardDeviation**
 - Next, **FFT** is included, if applicable, to indicate that the measurement had a Fast Fourier Transform (FFT) applied. 
