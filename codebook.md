@@ -45,8 +45,8 @@ The overall result is that the names are long, but hopefully easier to understan
 
 There are some interesting threads on the course discussion board about wide vs. narrow formats for tidy data. I chose to use the wide format, aligning to these principles:
 
-1) Each column represents a variable or measure or characteristic.
-2) Each variable is in one column.
-3) Each observation of the variable is in a different row.
+1. Each column represents a variable or measure or characteristic.
+2. Each variable is in one column.
+3. Each observation of the variable is in a different row.
 
 Hence the final tidy data set is 180 rows x 68 columns.
