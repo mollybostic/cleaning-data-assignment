@@ -1,9 +1,9 @@
 # Code book
 
-The tidy data in [tidy_data_set.txt](../tidy_data_set.txt) can be read into R with the following code:
+The tidy data in [tidy_data_set.txt](./tidy_data_set.txt) can be read into R with the following code:
 	read.table("tidy_data_set.txt", header=TRUE, colClasses=c('factor', 'factor', rep('numeric', 66)))
 
-The [tidy_data_set.txt](../tidy_data_set.txt) file in this directory is a tidy subset of the data provided in the Human Activity Recognition Using Smartphones Data Set. The source data is available from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones# and it's also included in the UCI HAR Dataset directory in this repo. 
+The [tidy_data_set.txt](./tidy_data_set.txt) file in this directory is a tidy subset of the data provided in the Human Activity Recognition Using Smartphones Data Set. The source data is available from http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones# and it's also included in the UCI HAR Dataset directory in this repo. 
 
 tidy_data_set.txt includes the combined test and training data sets from the following files:
 
@@ -41,7 +41,7 @@ Here are some example mappings of old to new column names:
 - Old: fBodyGyroMag-std()
 - New: StandardDeviationFFTBodyAngularVelocityMagnitude
 
-The overall result is that the names are long, but hopefully easier to understand.
+The overall result is that the names are long but hopefully easier to understand.
 
 There are some interesting threads on the course discussion board about wide vs. narrow formats for tidy data. I chose to use the wide format, aligning to these principles:
 
