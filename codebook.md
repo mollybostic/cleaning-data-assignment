@@ -57,4 +57,4 @@ The overall result is that the names are long but hopefully easier to understand
 
 ## Description of run_analysis.R script
 
-[readme.md](./readme.md) contains a walkthrough of the [run_analysis.R](./run_analysis.R) script and notes about how to run the script.
+[README.md](./README.md) contains a walkthrough of the [run_analysis.R](./run_analysis.R) script and notes about how to run the script.
